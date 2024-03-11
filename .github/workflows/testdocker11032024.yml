@@ -70,3 +70,4 @@ jobs:
    #       workflow: "CD Release - AKS"
    #       token: ${{ secrets.GH_PAT }}
    #       inputs: '{ "IMAGE_TAG": "${{ env.IMAGE_TAG }}" }'
+   
