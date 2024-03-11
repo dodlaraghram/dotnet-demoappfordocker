@@ -61,7 +61,7 @@ jobs:
       - name: Push to container registry
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |
-          docker login -u dodlaraghuram29@gmail.com -p Raghu2554!
+          docker login -u dodlaraghuram39@gmail.com -p Raghu2554!
           make push
    #   - name: "Trigger AKS release pipeline"
    #     if: github.ref == 'refs/heads/master'
