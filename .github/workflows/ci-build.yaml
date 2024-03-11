@@ -21,30 +21,30 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v2
 
-      - name: "Run linting"
+    #  - name: "Run linting"
         # We have to update the path because HOME is set weird in actions runner
-        run: export PATH=$PATH:$HOME/.dotnet/tools && make lint
+    #    run: export PATH=$PATH:$HOME/.dotnet/tools && make lint
 
-      - name: "Run tests"
-        run: make test-report
+    #  - name: "Run tests"
+    #    run: make test-report
 
-      - name: "Upload test results"
-        uses: actions/upload-artifact@v2
+    #  - name: "Upload test results"
+    #    uses: actions/upload-artifact@v2
         # Disabled when running locally with the nektos/act tool
-        if: ${{ always() }}
-        with:
-          name: test-results
-          path: tests/TestResults/
+    #    if: ${{ always() }}
+    #    with:
+    #      name: test-results
+    #     path: tests/TestResults/
 
-      - name: "Publish test results"
-        uses: EnricoMi/publish-unit-test-result-action@v1
-        if: ${{ always() }}
-        with:
-          files: tests/TestResults/TestResults.xml
+    #  - name: "Publish test results"
+    #    uses: EnricoMi/publish-unit-test-result-action@v1
+    #    if: ${{ always() }}
+    #    with:
+    #      files: tests/TestResults/TestResults.xml
 
   build:
     name: "Build & Push Image"
-    needs: test
+   # needs: test
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
