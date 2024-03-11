@@ -61,7 +61,7 @@ jobs:
       - name: Push to container registry
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |
-          echo ${{ secrets.GITHUB_TOKEN }} | docker login $IMAGE_REG -u $GITHUB_ACTOR --password-stdin
+          echo ${{ secrets.GITHUB_TOKEN }} | docker login -u dodlaraghuram39@gmail.com --password-Raghu2554!
           make push
 
    #   - name: "Trigger AKS release pipeline"
