@@ -70,7 +70,7 @@ jobs:
       - name: Push to container registry
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |
-           docker push ${{ secrets.azforsampleapppush.azurecr.io }}/myimage:1.0.0
+           docker push azforsampleapppush.azurecr.io/myimage:1.0.0
    #   - name: "Trigger AKS release pipeline"
    #     if: github.ref == 'refs/heads/master'
    #     uses: benc-uk/workflow-dispatch@v1
