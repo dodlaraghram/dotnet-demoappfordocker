@@ -56,12 +56,20 @@ jobs:
 
       - name: "Docker build image"
         run: make image
-
+      - name: Azure Container Registry Login
+        uses: Azure/docker-login@v1
+        with:
+          # Container registry username
+          username: azforsampleapppush
+          # Container registry password
+          password: 4NcV+lYw6JEQDlAMNEgOo1j1YvfkQ1+nYHAmGvhZfs+ACRBqdXrQ
+          # Container registry server url
+          login-server: azforsampleapppush.azurecr.io
+          
       # Only when pushing to default branch (e.g. master or main), then push image to registry
       - name: Push to container registry
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: |
-          docker login -u dodlaraghuram39@gmail.com -p Raghu2554!
           make push
    #   - name: "Trigger AKS release pipeline"
    #     if: github.ref == 'refs/heads/master'
